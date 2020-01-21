@@ -9,7 +9,7 @@ public class Vignere extends AbstractCipher implements CipherInterface{
 	}
 	
 	// Make the cipher
-	protected void makeAlp(String keyword) throws BadKeywordException{
+	private void makeAlp(String keyword) throws BadKeywordException{
 		if(!checkKeyword(keyword)) {
 			throw new BadKeywordException();
 		}
@@ -104,4 +104,25 @@ public class Vignere extends AbstractCipher implements CipherInterface{
 		return out;
 	}
 	
+	/*
+	 * Method to check the keyword for repeating
+	 * characters and make sure it's just A-Z values
+	 */
+	public boolean checkKeyword(String keyword) {
+		// check for repeated characters
+		for(int i=0;i<keyword.length()-1;i++) {
+			// Check this char is between A and Z
+			int thisChar = (int)keyword.charAt(i);
+			if(thisChar < 'A' || thisChar > 'Z') {
+				return false;
+			}
+			// Check the char hasn't appeared earlier
+			for(int j=i+1;j<keyword.length();j++) {
+				if(keyword.charAt(i) == keyword.charAt(j)) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }

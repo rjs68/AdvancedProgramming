@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Exercise2 {
 	public static void main(String[] args) {
 		ArrayList<AbstractCipher> ciphers = new ArrayList<AbstractCipher>();
-		String keyword = "ZEBRA";
+		String keyword = "ALPHABET";
 		try {
 			String keywords = "THIS IS A MESSAGE TO ENCODE";
 			Mono m = new Mono(keyword);
