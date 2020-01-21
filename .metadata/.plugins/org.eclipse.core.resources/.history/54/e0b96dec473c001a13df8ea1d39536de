@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-/* Main method to test various implementations of the 
- * cipher classes
- */
-
 public class Exercise2 {
 	public static void main(String[] args) {
 		ArrayList<CipherInterface> ciphers = new ArrayList<CipherInterface>();

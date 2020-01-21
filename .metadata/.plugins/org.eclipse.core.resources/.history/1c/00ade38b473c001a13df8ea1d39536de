@@ -1,17 +1,12 @@
 import java.util.ArrayList;
 
-/* Main method to test various implementations of the 
- * cipher classes
- */
-
 public class Exercise2 {
 	public static void main(String[] args) {
 		ArrayList<CipherInterface> ciphers = new ArrayList<CipherInterface>();
-		String keyword = "RHINO";
+		String keywords = "THIS IS A MESSAGE TO ENCODE";
 		try {
-			String keywords = "THIS IS A MESSAGE TO ENCODE";
-			Mono m = new Mono(keyword);
-			Vignere v = new Vignere(keyword);
+			Mono m = new Mono(keywords);
+			Vignere v = new Vignere(keywords);
 			ciphers.add(m);
 			ciphers.add(v);
 			for(int i=0; i<ciphers.size(); i++) {
