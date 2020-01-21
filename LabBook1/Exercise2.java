@@ -9,7 +9,7 @@ public class Exercise2 {
 		ArrayList<AbstractCipher> ciphers = new ArrayList<AbstractCipher>();
 		String keyword = "ZEBRA";
 		try {
-			String keywords = "THIS IS A MESSAGE TO ENCODE";
+			String keywords = "NATHAN IS A CUNT";
 			Mono m = new Mono(keyword);
 			Vignere v = new Vignere(keyword);
 			ciphers.add(m);

@@ -1,0 +1,18 @@
+
+public class DictionaryTest {
+
+	//Main to test Dictionary class
+	public static void main(String[] args) {
+		Dictionary<String, Integer> dict = new Dictionary<String, Integer>();
+		
+		dict.set("Rhys", 10);
+		dict.set("Julia", 10);
+		dict.set("Mark", 1);
+		dict.set("Hugh", 7);
+		dict.set("Nathan", 2);
+		
+		System.out.println(dict);
+		System.out.println(dict.get("Hugh"));
+	}
+
+}
