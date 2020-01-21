@@ -1,5 +1,5 @@
 
-public class Mono implements CipherInterface{
+public class Mono {
 	// alp is the cipher array
 	private char[] alp = new char[26];
 	

@@ -1,5 +1,5 @@
 
-public class Vignere implements CipherInterface{
+public class Vignere{
 	private char[][] alp; // cipher array
 	private int rowPos; // which row are we currently using for encode / decode
 	

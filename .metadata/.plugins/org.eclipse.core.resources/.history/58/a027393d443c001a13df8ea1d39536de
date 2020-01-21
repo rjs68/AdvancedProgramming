@@ -1,0 +1,4 @@
+
+public interface CipherInterface {
+	private void makeAlp(String keyword);
+}

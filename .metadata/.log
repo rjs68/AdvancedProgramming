@@ -12,3 +12,12 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2020-01-21 11:45:23.696
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2020-01-21 11:45:23.696
+!MESSAGE session context was:(profile=C__Users_Rhys_eclipse_java-2019-09_eclipse, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2020-01-21 11:45:23.696
+!MESSAGE No repository found containing: osgi.bundle,pm.eclipse.editbox,1.0.0.201804021412
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2020-01-21 11:45:23.696
+!MESSAGE No repository found containing: org.eclipse.update.feature,pm.eclipse.editbox.feature,1.0.0.201804021412

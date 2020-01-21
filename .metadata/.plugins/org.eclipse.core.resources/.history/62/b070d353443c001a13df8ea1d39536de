@@ -1,15 +1,15 @@
 
-public class Vignere implements CipherInterface{
+public class Vignere{
 	private char[][] alp; // cipher array
 	private int rowPos; // which row are we currently using for encode / decode
 	
 	public Vignere(String keyword) throws BadKeywordException{
-		this.makeAlp(keyword);
+		this.setupAlp(keyword);
 		rowPos = 0;
 	}
 	
 	// Make the cipher
-	private void makeAlp(String keyword) throws BadKeywordException{
+	private void setupAlp(String keyword) throws BadKeywordException{
 		if(!checkKeyword(keyword)) {
 			throw new BadKeywordException();
 		}
