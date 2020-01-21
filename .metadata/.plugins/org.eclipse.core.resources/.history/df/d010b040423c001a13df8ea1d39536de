@@ -1,0 +1,14 @@
+
+public class Exercise2 {
+	public static void main(String[] args) {
+		try {
+			Mono mono = new Mono("RHYS");
+			Vignere vignere = new Vignere("RHYS");
+			System.out.println(mono.decode("ODXP"));
+			System.out.println(vignere.encode("RHYS"));
+		} catch(Exception e) {
+			System.out.println("Exception");
+		}
+		
+	}
+}

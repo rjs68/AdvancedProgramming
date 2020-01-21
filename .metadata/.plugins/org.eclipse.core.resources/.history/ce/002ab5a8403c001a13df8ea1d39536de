@@ -1,0 +1,12 @@
+
+public class Exercise2 {
+	public static void main(String[] args) {
+		try {
+			Mono mono = new Mono("rhys");
+			System.out.println(mono.encode("rhys"));
+		} catch(Exception e) {
+			System.out.println("Exception");
+		}
+		
+	}
+}
