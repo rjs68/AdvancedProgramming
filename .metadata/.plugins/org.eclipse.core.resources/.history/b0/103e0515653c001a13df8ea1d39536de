@@ -1,4 +1,0 @@
-
-public interface AddressValue {
-	public String getValue();
-}

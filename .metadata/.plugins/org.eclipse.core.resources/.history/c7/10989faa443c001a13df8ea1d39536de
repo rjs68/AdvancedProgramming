@@ -1,7 +1,0 @@
-
-public interface CipherInterface {
-	public void makeAlp(String keyword) throws BadKeywordException;
-	public String getAlp();
-	public char encode(char in);
-	public char decode(char in);
-}
