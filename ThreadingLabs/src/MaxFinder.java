@@ -1,4 +1,3 @@
-import java.awt.*;
 
 public class MaxFinder {
     public static void main(String[] args){
@@ -12,6 +11,31 @@ public class MaxFinder {
             }
         }
         System.out.println("The max value is: " + maxValue);
+
+        Double[] maxValues = new Double[100];
+        Thread[] maxValueThreads = new Thread[100];
+
+        for(int i=0; i<100; i++) {
+            maxValueThreads[i] = new Thread(new MaxValue1DArray(randArray[i], maxValues, i));
+            maxValueThreads[i].start();
+        }
+        for(int i=0; i<100; i++){
+            try {
+                maxValueThreads[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Double[] myMaxValue = new Double[1];
+        Thread maxValueThread = new Thread(new MaxValue1DArray(maxValues, myMaxValue, 0));
+        maxValueThread.start();
+        try {
+            maxValueThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("I got the max value as: " + myMaxValue[0]);
     }
 
     private static Double[][] createArray(){
