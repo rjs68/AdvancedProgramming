@@ -10,10 +10,13 @@ public class AltMaxValue1DArray implements Runnable {
     }
 
     public void run(){
+        sharedMaxValue.lock();
+        maxValue=sharedMaxValue.getD();
         for(int i=1; i<inputArray.length; i++){
             if(inputArray[i]>maxValue){
                 sharedMaxValue.setD(inputArray[i]);
             }
         }
+        sharedMaxValue.unlock();
     }
 }
