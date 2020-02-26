@@ -23,11 +23,19 @@ public class PauseExtendTest {
         }
     }
 
-    public static void main(String args[]){
-        PauseExtend[] pauses = new PauseExtend[3];
+    public static void main(String args[]) {
+        PauseExtend[] pauses = new PauseExtend[10];
         for(int i=0; i<pauses.length; i++){
             pauses[i] = new PauseExtend(i+1);
             pauses[i].start();
         }
+        for(int i=0; i<pauses.length; i++){
+            try {
+                pauses[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("All the threads have finished!");
     }
 }
