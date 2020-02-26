@@ -6,7 +6,7 @@ public class AltSharedDouble {
     public Double getD() {
         return d;
     }
-    public void compare(Double a) {
+    public synchronized void compare(Double a) {
         if(a > d) {
             try {
                 Thread.sleep(1);

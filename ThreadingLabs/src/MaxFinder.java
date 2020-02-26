@@ -70,7 +70,7 @@ public class MaxFinder {
             }
         }
 
-        System.out.println("And I got the max value as: " + myAltMaxValue.getD());
+        System.out.println("And I got the max value as: " + myAltAltMaxValue.getD());
     }
 
     private static Double[][] createArray(){
