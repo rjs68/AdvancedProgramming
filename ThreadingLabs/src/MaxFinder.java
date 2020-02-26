@@ -36,6 +36,24 @@ public class MaxFinder {
             e.printStackTrace();
         }
         System.out.println("I got the max value as: " + myMaxValue[0]);
+
+        SharedDouble myAltMaxValue = new SharedDouble();
+        myAltMaxValue.setD(0.0);
+        Thread[] maxAltValueThreads = new Thread[100];
+
+        for(int i=0; i<100; i++) {
+            maxAltValueThreads[i] = new Thread(new AltMaxValue1DArray(randArray[i], myAltMaxValue));
+            maxAltValueThreads[i].start();
+        }
+        for(int i=0; i<100; i++){
+            try {
+                maxAltValueThreads[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("But I got the max value as: " + myAltMaxValue.getD());
     }
 
     private static Double[][] createArray(){
