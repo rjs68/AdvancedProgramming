@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -11,11 +12,14 @@ public class Reader implements Runnable {
 
     public void run(){
         try{
-            Scanner sc = new Scanner(this.socket.getInputStream());
-            while(sc.hasNextLine()){
-                System.out.println(sc.nextLine());
+            ObjectInputStream sc = new ObjectInputStream(this.socket.getInputStream());
+            Message message;
+            while((message = (Message)sc.readObject()) != null){
+                System.out.println(message);
             }
             sc.close();
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
         }catch(IOException e){
             e.printStackTrace();
         }

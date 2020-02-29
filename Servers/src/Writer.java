@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.Scanner;
@@ -13,14 +14,15 @@ public class Writer implements Runnable {
     public void run(){
         try{
             Scanner sc = new Scanner(System.in);
-            OutputStreamWriter os = new OutputStreamWriter(socket.getOutputStream());
+            ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
             String line;
+            System.out.println("What is your name?");
+            String name = sc.nextLine();
             while(!(line = sc.nextLine()).equals("END")){
-                os.write(line + '\n');
-                os.flush();
+                os.writeObject(new Message(line,name));
             }
             sc.close();
-            os.flush();
+            os.close();
         }catch (IOException e){
             e.printStackTrace();
         }
